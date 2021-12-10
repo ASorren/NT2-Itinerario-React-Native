@@ -134,6 +134,159 @@ export function EditForm({ route, navigation, countryNames, token }) {
     ];
 
     return (
-        <h1>Empty Return</h1>
+        <Formik
+      initialValues={{
+        name: myName,
+        surname: mySurname,
+        age: myAge,
+        genre: myGender,
+        countryOrigin: myNationality,
+        countryResidence: myCountry,
+        cityResidence: myCity,
+      }}
+      validationSchema={generalInfoSchema}
+      validateOnChange={false}
+      validateOnBlur={false}
+      onSubmit={(values) => {
+        update(values);
+      }}
+    >
+      {({ errors, handleChange, handleSubmit, setFieldValue, values }) => (
+        <View style={styles.formContainer}>
+          <InputI
+            placeHolder={"Nombre"}
+            isSecure={false}
+            value={values.name}
+            onChangeText={handleChange("name")}
+            errorMessage={errors.name}
+            id={"name"}
+          />
+          <InputI
+            placeHolder={"Apellido"}
+            isSecure={false}
+            value={values.surname}
+            onChangeText={handleChange("surname")}
+            errorMessage={errors.surname}
+            id={"surname"}
+          />
+          <Input
+            style={{
+              ...styles.input,
+              textAlign: "center",
+              marginLeft: 10,
+            }}
+            placeholder={"Edad"}
+            inputContainerStyle={{ borderBottomWidth: 0 }}
+            keyboardType="numeric"
+            value={values.age}
+            onChangeText={handleChange("age")}
+            errorMessage={errors.age}
+            id={"age"}
+          />
+          <View style={styles.picker}>
+            <RNPickerSelect
+              placeholder={generoPlaceHolder}
+              items={generos}
+              onValueChange={(value) => {
+                setGender(value);
+                setFieldValue("genre", value);
+              }}
+              value={values.genre}
+            >
+              <Text style={styles.buttonText}>{gender}</Text>
+            </RNPickerSelect>
+          </View>
+          <Text style={styles.errorText}>{errors.genre}</Text>
+          <View style={styles.picker}>
+            <RNPickerSelect
+              placeholder={nationalityPlaceHolder}
+              items={countryNames}
+              onValueChange={(value) => {
+                setNationality(value);
+                setFieldValue("countryOrigin", value);
+              }}
+              value={values.countryOrigin}
+            >
+              <Text style={styles.buttonText}>{nationality}</Text>
+            </RNPickerSelect>
+          </View>
+          <Text style={styles.errorText}>{errors.countryOrigin}</Text>
+          <View style={styles.picker}>
+            <RNPickerSelect
+              placeholder={countryPlaceHolder}
+              items={countryNames}
+              onValueChange={(value) => {
+                setCountry(value);
+                setFieldValue("countryResidence", value);
+              }}
+              value={values.countryResidence}
+            >
+              <Text style={styles.buttonText}>{country}</Text>
+            </RNPickerSelect>
+          </View>
+          <Text style={styles.errorText}>{errors.countryResidence}</Text>
+          <View style={styles.picker}>
+            <RNPickerSelect
+              placeholder={cityPlaceHolder}
+              items={citiesName}
+              onValueChange={(value) => {
+                setCity(value);
+                setFieldValue("cityResidence", value);
+              }}
+              value={values.cityResidence}
+            >
+              <Text style={styles.buttonText}>{city}</Text>
+            </RNPickerSelect>
+          </View>
+          <Text style={styles.errorText}>{errors.cityResidence}</Text>
+          <GreenButton onPress={handleSubmit} text="Guardar Cambios" />
+        </View>
+      )}
+    </Formik>
     );
 }
+
+const styles = StyleSheet.create({
+    formContainer: {
+      width: "100%",
+      alignSelf: "center",
+      justifyContent: "center",
+      marginTop: 30,
+    },
+    input: {
+      alignSelf: "center",
+      paddingVertical: 10,
+      marginVertical: 1,
+      width: "75%",
+      borderRadius: 32,
+      borderColor: "#32BB77",
+      borderWidth: 1,
+      fontSize: 18,
+      backgroundColor: "#FFFFFF",
+    },
+    picker: {
+      paddingVertical: 10,
+      marginVertical: 1,
+      width: "91%",
+      height: 50,
+      borderRadius: 32,
+      borderColor: "#32BB77",
+      borderWidth: 1,
+      fontSize: 18,
+      backgroundColor: "#FFFFFF",
+      justifyContent: "center",
+      marginLeft: 20,
+    },
+    buttonText: {
+      textAlign: "center",
+      fontSize: 18,
+      color: "black",
+    },
+    errorText: {
+      fontSize: 12,
+      color: "red",
+      marginBottom: 10,
+      marginLeft: 15,
+      marginTop: 1,
+    },
+  });

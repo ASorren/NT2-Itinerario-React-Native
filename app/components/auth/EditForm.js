@@ -44,3 +44,96 @@ const generalInfoSchema = Yup.object().shape({
     .typeError(mensajeYup)
     .notOneOf(["Ciudad de Residencia"], mensajeYup),
 });
+
+export function EditForm({ route, navigation, countryNames, token }) {
+    const {
+      myAge,
+      myCity,
+      myCountry,
+      myGender,
+      mySurname,
+      myName,
+      myNationality,
+      myEmail,
+    } = route.params.userInfo;
+    const [gender, setGender] = useState(myGender);
+    const [nationality, setNationality] = useState(myNationality);
+    const [country, setCountry] = useState(myCountry);
+    const [city, setCity] = useState(myCity);
+    const [citiesName, setCitiesName] = useState([]);
+  
+    useEffect(() => {
+      getAllCities(token, country);
+    }, [country]);
+  
+    function getAllCities(token, country) {
+      if (token && country) {
+        let cities = [];
+        getCities(token, country)
+          .then((response) => {
+            response.data.forEach((c) => {
+              let myCity = {
+                label: c.state_name,
+                value: c.state_name,
+              };
+              cities.push(myCity);
+            });
+            setCitiesName(cities);
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      }
+    }
+  
+    function update(data) {
+      const generalInfo = {
+        name: data.name,
+        lastName: data.surname,
+        age: data.age,
+        gender: data.genre,
+        nationality: data.countryOrigin,
+        country: data.countryResidence,
+        city: data.cityResidence,
+      };
+      if (generalInfo) {
+        updateGralInfo(generalInfo)
+          .then(() => {
+            handleUser("updateGeneralInfo", () => {}, generalInfo);
+            navigation.reset({ index: 0, routes: [{ name: "datos" }] });
+          })
+          .catch((error) => {
+            console.log(error.msg);
+          });
+      }
+    }
+  
+    const generoPlaceHolder = {
+      label: "Genero",
+      value: "Genero",
+    };
+  
+    const nationalityPlaceHolder = {
+      label: "Nacionalidad",
+      value: "Nacionalidad",
+    };
+  
+    const countryPlaceHolder = {
+      label: "Pais de Residencia",
+      value: "Pais de Residencia",
+    };
+  
+    const cityPlaceHolder = {
+      label: "Ciudad de Residencia",
+      value: "Ciudad de Residencia",
+    };
+  
+    const generos = [
+      { label: "Masculino", value: "Masculino" },
+      { label: "Femenino", value: "Femenino" },
+    ];
+
+    return (
+        <h1>Empty Return</h1>
+    );
+}

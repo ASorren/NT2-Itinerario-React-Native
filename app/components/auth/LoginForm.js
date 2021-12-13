@@ -21,10 +21,6 @@ const loginSchema = Yup.object().shape({
     .required('La contraseña es requerida'),
 });
 
-
-
-
-
 export function LoginForm(props) {
   const { navigation } = props;
   const updateUser = useAuthUpdateContext();

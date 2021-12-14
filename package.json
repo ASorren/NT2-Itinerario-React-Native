@@ -36,7 +36,6 @@
     "react-native-timeline-flatlist": "^0.7.6",
     "react-native-web": "0.17.1",
     "yup": "^0.32.11"
-    
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

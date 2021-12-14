@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { StyleSheet, View, Text, Modal, Image, TouchableOpacity, Button } from "react-native";
-import { InputI } from "../../components/inputI";
-import { GreenButton, WhiteButton } from "../../components/buttonI";
+import { InputI } from "../inputI";
+import { GreenButton, WhiteButton } from "../buttonI";
 import { handleUser } from "../../utils/Context/Storage";
 import { useAuthUpdateContext } from '../../utils/Context/AuthContext';
-import { ForgotPassModal } from "../../components/Auth/ForgotPassModal";
-import { fetchUser } from "../../api/PosadasApi";
+import { ForgotPassModal } from "./ForgotPassModal";
+import { fetchUser } from "../../api/itinerarioApi";
 
 import * as Yup from 'yup';
 import { Formik } from 'formik';

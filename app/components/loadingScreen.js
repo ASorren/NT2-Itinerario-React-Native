@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ActivityIndicator, Image, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
-//import logoItinerario from "../../assets/logoItinerario.png";
+import logoItinerario from "../../assets/logoPosadas.png";
 
 export default function LoadingScreen() {
   return (

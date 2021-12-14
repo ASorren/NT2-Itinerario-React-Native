@@ -3,7 +3,7 @@ import { StyleSheet, Image, ScrollView, View, Text } from "react-native";
 import logo from "../../../assets/logoPosadas.png";
 import { EditForm } from "../../components/Auth/EditForm";
 
-import { getToken, getCountries } from "../../api/PosadasApi";
+import { getToken, getCountries } from "../../api/itinerarioApi";
 
 export default function editInfo(props) {
   const { navigation, route } = props;

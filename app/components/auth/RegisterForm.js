@@ -1,7 +1,7 @@
 import React , {useState, useEffect} from "react";
 import { StyleSheet, View } from "react-native";
-import { InputI } from "../../components/inputI";
-import { GreenButton } from "../../components/buttonI";
+import { InputI } from "../inputI";
+import { GreenButton } from "../buttonI";
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 

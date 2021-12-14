@@ -26,6 +26,7 @@ export default function DayItem({ item, navigator }) {
   const dateLowerCase = moment(item.attendanceDate).format("MMM DD"); // Esto es para que el día se muestre "Mes : Nom   Día : 00"
   const date = dateLowerCase.charAt(0).toUpperCase() + dateLowerCase.slice(1); //Se capitaliza la primera letra para que no quede en minuscula
   const index = item.number - 1; // Esto va a la ruta de SearchAttraction para enviarselo a lo demás
+  console.log(date);
 
   const renderDetail = (rowData, sectionID, rowID) => {
     return (

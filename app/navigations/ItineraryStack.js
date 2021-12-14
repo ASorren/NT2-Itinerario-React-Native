@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import General from "../screens/Attractions/General";
-import CreateItineraty from "../screens/Attractions/CreateItineraty";
+import CreateItineraty from "../screens/Attractions/CreateItinerary";
 import DetalleAtraccion from "../screens/Attractions/DetalleAtraccion";
 import MyTrip from "../screens/Attractions/MyTrip";
 import SearchAtraccion from "../screens/Attractions/SearchAtraccion";

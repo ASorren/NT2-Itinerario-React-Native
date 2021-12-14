@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import { InputI } from "../../components/inputI";
-import { forgotPassword } from "../../api/PosadasApi";
+import { InputI } from "../inputI";
+import { forgotPassword } from "../../api/itinerarioApi";
 
 const ModalPopUp = ({ visible, children }) => {
   const [showModal, setShowModal] = useState(visible);

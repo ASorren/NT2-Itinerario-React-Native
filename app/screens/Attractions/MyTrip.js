@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, Modal } from "react-native";
 import DayItem from "../../components/DayItem";
-import { fetchUser, updateUser } from "../../api/PosadasApi";
+import { fetchUser, updateUser } from "../../api/itinerarioApi";
 import { TouchableOpacity } from "react-native";
 import {
   useAuthUpdateContext,

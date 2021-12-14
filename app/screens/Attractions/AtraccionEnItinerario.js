@@ -11,7 +11,7 @@ import COLORS from "../colors";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { Rating } from 'react-native-elements';
 import {WhiteButton , PinkButton} from "../../components/buttonI";
-import {fetchUser , updateUser , fetchAttraction} from '../../api/PosadasApi';
+import {fetchUser , updateUser , fetchAttraction} from '../../api/itinerarioApi';
 
 export default function AtraccionEnItinerario({ route, navigation }) {
   const { id , indexAttrac , dateAndHour, indexDia} = route.params;

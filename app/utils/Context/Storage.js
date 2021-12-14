@@ -1,6 +1,6 @@
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { loginUser, registerUser, fetchUser } from "../../api/PosadasApi";
+import { loginUser, registerUser, fetchUser } from "../../api/itinerarioApi";
 import { Alert } from "react-native";
 
 // Recibe un usuario, una acción con el usuario y un hook al cual correr.

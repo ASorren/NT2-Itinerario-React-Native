@@ -5,12 +5,12 @@ import {
   WhiteButton,
   GreenButton,
   SmallButton,
-} from "../../components/buttonI";
-import { EditPassModal } from "../../components/Auth/EditPassModal";
+} from "../buttonI";
+import { EditPassModal } from "./EditPassModal";
 import { useAuthRemoveContext } from "../../utils/Context/AuthContext";
 import { handleUser } from "../../utils/Context/Storage";
 import { Text } from "react-native-elements";
-import { fetchUser } from "../../api/PosadasApi";
+import { fetchUser } from "../../api/itinerarioApi";
 import LoadingScreen from "../loadingScreen";
 
 export default function UserInfo({ navigation }) {

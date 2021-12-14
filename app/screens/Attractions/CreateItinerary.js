@@ -9,7 +9,7 @@ import {
 import moment from "moment";
 import CalendarPicker from "react-native-calendar-picker";
 import RNPickerSelect from "react-native-picker-select";
-import { fetchUser ,  updateUser , getAllAttractions} from "../../api/PosadasApi";
+import { fetchUser ,  updateUser , getAllAttractions} from "../../api/itinerarioApi";
 import {useAuthUpdateContext , useAuthContext} from '../../utils/Context/AuthContext';
 
 export default function CreateItineraty(props) {

@@ -9,9 +9,9 @@ import {
   Button,
   Alert,
 } from "react-native";
-import { InputI } from "../../components/inputI";
-import { GreenButton } from "../../components/buttonI";
-import { forgotPassword, updatePassword } from "../../api/PosadasApi";
+import { InputI } from "../inputI";
+import { GreenButton } from "../buttonI";
+import { forgotPassword, updatePassword } from "../../api/itinerarioApi";
 import * as Yup from "yup";
 import { Formik } from "formik";
 

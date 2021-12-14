@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
-import { InputI } from "../../components/inputI";
-import { GreenButton } from "../../components/buttonI";
+import { InputI } from "../inputI";
+import { GreenButton } from "../buttonI";
 import { handleUser } from "../../utils/Context/Storage";
 import { Input } from "react-native-elements";
 import { ItemDropdown } from "../ItemDropdown";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import RNPickerSelect from "react-native-picker-select";
-import { getCities, updateGralInfo } from "../../api/PosadasApi";
+import { getCities, updateGralInfo } from "../../api/itinerarioApi";
 
 const mensajeYup = "El campo es obligatorio";
 
